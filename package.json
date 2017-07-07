@@ -1,0 +1,22 @@
+{
+  "name": "benchrouter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Tomas Della Vedova <tommydelved@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "benchmark": "^2.1.4",
+    "call": "^4.0.2",
+    "find-my-way": "^1.2.1",
+    "koa-router": "^7.2.1",
+    "route-recognizer": "^0.3.3",
+    "router": "^1.3.1",
+    "routr": "^2.1.0",
+    "server-router": "^5.2.0"
+  }
+}
