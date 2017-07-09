@@ -1,13 +1,17 @@
 {
   "name": "benchrouter",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "static": "node static.js",
+    "dynamic": "node dynamic.js",
+    "wildcard": "node wildcard.js",
+    "all": "npm run static && npm run dynamic && npm run wildcard"
   },
   "keywords": [],
-  "author": "Tomas Della Vedova <tommydelved@gmail.com>",
+  "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "ISC",
   "dependencies": {
     "benchmark": "^2.1.4",
