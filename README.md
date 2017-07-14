@@ -9,41 +9,47 @@ Tested routers:
 - [route-recognizer](https://github.com/tildeio/route-recognizer)
 - [router](https://github.com/pillarjs/router)
 - [server-router](https://github.com/yoshuawuyts/server-router)
+- [express](https://www.npmjs.com/package/express)
 
 Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pulls)! :D
 
 <a name="results"></a>
 ## Results
+*These benchmarks where taken under node v6.10.0, on a MacBook Pro Retina Late 2013 (i7, 16GB of RAM).*
+
 **Static**
 ```
-find-my-way | lookup static route x 8,274,826 ops/sec ±0.99% (91 runs sampled)
-route-recognizer | lookup static route x 133,771 ops/sec ±1.16% (84 runs sampled)
-router | lookup static route x 270,335 ops/sec ±15.58% (65 runs sampled)
-server-router | lookup static route x 233,201 ops/sec ±57.56% (81 runs sampled)
-koa-router | lookup static route x 251,888 ops/sec ±0.88% (86 runs sampled)
-routr | lookup static route x 2,474,440 ops/sec ±0.99% (85 runs sampled)
-call | lookup static route x 104,846 ops/sec ±0.99% (84 runs sampled)
+find-my-way | lookup static route x 8,284,312 ops/sec ±0.99% (91 runs sampled)
+route-recognizer | lookup static route x 154,168 ops/sec ±1.13% (88 runs sampled)
+router | lookup static route x 273,377 ops/sec ±27.23% (60 runs sampled)
+server-router | lookup static route x 385,134 ops/sec ±1.20% (89 runs sampled)
+koa-router | lookup static route x 304,621 ops/sec ±1.05% (88 runs sampled)
+routr | lookup static route x 2,535,607 ops/sec ±1.10% (87 runs sampled)
+call | lookup static route x 125,371 ops/sec ±0.97% (91 runs sampled)
+express | lookup static route x 50,498 ops/sec ±98.59% (19 runs sampled)
 ```
 
 **Dynamic**
 ```
-find-my-way | lookup dynamic route x 2,006,576 ops/sec ±0.80% (85 runs sampled)
-route-recognizer | lookup dynamic route x 116,785 ops/sec ±1.39% (85 runs sampled)
-router | lookup dynamic route x 190,412 ops/sec ±16.75% (62 runs sampled)
-server-router | lookup dynamic route x 291,046 ops/sec ±1.12% (85 runs sampled)
-koa-router | lookup dynamic route x 255,698 ops/sec ±0.95% (86 runs sampled)
-routr | lookup dynamic route x 984,125 ops/sec ±0.80% (85 runs sampled)
-call | lookup dynamic route x 101,786 ops/sec ±1.12% (88 runs sampled)
+find-my-way | lookup dynamic route x 2,647,488 ops/sec ±0.93% (89 runs sampled)
+route-recognizer | lookup dynamic route x 140,526 ops/sec ±1.13% (89 runs sampled)
+router | lookup dynamic route x 232,006 ops/sec ±11.61% (75 runs sampled)
+server-router | lookup dynamic route x 340,602 ops/sec ±0.79% (92 runs sampled)
+koa-router | lookup dynamic route x 296,380 ops/sec ±1.06% (85 runs sampled)
+routr | lookup dynamic route x 1,100,265 ops/sec ±1.18% (89 runs sampled)
+call | lookup dynamic route x 118,848 ops/sec ±0.73% (90 runs sampled)
+express | lookup dynamic route x 116,762 ops/sec ±53.99% (41 runs sampled)
 ```
 
 **Wildcard**
 ```
-find-my-way | lookup wildcard route x 3,723,882 ops/sec ±0.85% (85 runs sampled)
-route-recognizer | lookup wildcard route x 133,637 ops/sec ±1.42% (85 runs sampled)
-router | lookup wildcard route x 199,073 ops/sec ±14.98% (66 runs sampled)
-server-router | lookup wildcard route x 297,513 ops/sec ±0.98% (87 runs sampled)
-koa-router | lookup wildcard route x 260,644 ops/sec ±0.93% (86 runs sampled)
-routr | lookup wildcard route x 1,160,187 ops/sec ±0.86% (83 runs sampled)
+find-my-way | lookup wildcard route x 3,736,314 ops/sec ±0.87% (88 runs sampled)
+route-recognizer | lookup wildcard route x 150,854 ops/sec ±1.11% (90 runs sampled)
+router | lookup wildcard route x 232,003 ops/sec ±15.32% (67 runs sampled)
+server-router | lookup wildcard route x 241,934 ops/sec ±58.42% (90 runs sampled)
+koa-router | lookup wildcard route x 297,637 ops/sec ±1.03% (89 runs sampled)
+routr | lookup wildcard route x 1,390,896 ops/sec ±0.90% (88 runs sampled)
+express | lookup wildcard route x 48,479 ops/sec ±109.54% (16 runs sampled)
 ```
 
 ### Run the benchmarks
