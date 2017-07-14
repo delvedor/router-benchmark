@@ -21,6 +21,7 @@ const routr = new Routr([{
 }])
 const call = require('call')
 const callRouter = new call.Router()
+const express = require('express/lib/router')()
 
 findMyWay.on('GET', url, noop)
 routeRecognizer.add([{ path: url, handler: noop }])
@@ -28,6 +29,7 @@ router.get(url, noop)
 serverRouter.route('GET', url, noop)
 koaRouter.get(url, noop)
 callRouter.add({ method: 'GET', path: '/bench/{mark}' })
+express.route(url).get(() => {})
 
 suite
   .add('find-my-way | lookup dynamic route', function () {
@@ -50,6 +52,9 @@ suite
   })
   .add('call | lookup dynamic route', function () {
     callRouter.route('GET', req.url)
+  })
+  .add('express | lookup dynamic route', function () {
+    express.handle(req, null, noop)
   })
   .on('cycle', function (event) {
     console.log(String(event.target))
