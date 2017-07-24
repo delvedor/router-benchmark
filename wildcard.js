@@ -23,6 +23,8 @@ const routr = new Routr([{
 // const callRouter = new call.Router()
 const express = require('express/lib/router')()
 const wayfarer = require('wayfarer')()
+const TrekRouter = require('trek-router')
+const trekRouter = new TrekRouter()
 
 findMyWay.on('GET', url, noop)
 routeRecognizer.add([{ path: url, handler: noop }])
@@ -32,6 +34,7 @@ koaRouter.get(url, noop)
 // callRouter.add({ method: 'GET', path: '{params*}' })
 express.route(url).get(() => {})
 wayfarer.on(url, noop)
+trekRouter.add('GET', url, noop)
 
 suite
   .add('find-my-way | lookup wildcard route', function () {
@@ -58,8 +61,11 @@ suite
   .add('express | lookup wildcard route', function () {
     express.handle(req, null, noop)
   })
-   .add('wayfarer | lookup dynamic route', function () {
+  .add('wayfarer | lookup dynamic route', function () {
     wayfarer(req.url)
+  })
+  .add('trek-router | lookup dynamic route', function () {
+    trekRouter.find(req.method, req.url)
   })
   .on('cycle', function (event) {
     console.log(String(event.target))

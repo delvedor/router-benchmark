@@ -23,6 +23,8 @@ const call = require('call')
 const callRouter = new call.Router()
 const express = require('express/lib/router')()
 const wayfarer = require('wayfarer')()
+const TrekRouter = require('trek-router')
+const trekRouter = new TrekRouter()
 
 findMyWay.on('GET', url, noop)
 routeRecognizer.add([{ path: url, handler: noop }])
@@ -32,6 +34,7 @@ koaRouter.get(url, noop)
 callRouter.add({ method: 'GET', path: url })
 express.route(url).get(() => {})
 wayfarer.on(url, noop)
+trekRouter.add('GET', url, noop)
 
 suite
   .add('find-my-way | lookup static route', function () {
@@ -60,6 +63,9 @@ suite
   })
   .add('wayfarer | lookup static route', function () {
     wayfarer(url)
+  })
+  .add('trek-router | lookup static route', function () {
+    trekRouter.find('GET', url)
   })
   .on('cycle', function (event) {
     console.log(String(event.target))
