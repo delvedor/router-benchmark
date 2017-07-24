@@ -22,6 +22,7 @@ const routr = new Routr([{
 const call = require('call')
 const callRouter = new call.Router()
 const express = require('express/lib/router')()
+const wayfarer = require('wayfarer')()
 
 findMyWay.on('GET', url, noop)
 routeRecognizer.add([{ path: url, handler: noop }])
@@ -30,6 +31,7 @@ serverRouter.route('GET', url, noop)
 koaRouter.get(url, noop)
 callRouter.add({ method: 'GET', path: url })
 express.route(url).get(() => {})
+wayfarer.on(url, noop)
 
 suite
   .add('find-my-way | lookup static route', function () {
@@ -55,6 +57,9 @@ suite
   })
   .add('express | lookup static route', function () {
     express.handle(req, null, noop)
+  })
+  .add('wayfarer | lookup static route', function () {
+    wayfarer(url)
   })
   .on('cycle', function (event) {
     console.log(String(event.target))
