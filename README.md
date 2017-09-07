@@ -10,6 +10,7 @@ Tested routers:
 - [router](https://github.com/pillarjs/router)
 - [server-router](https://github.com/yoshuawuyts/server-router)
 - [express](https://www.npmjs.com/package/express)
+- [barista](https://kieran.github.io/barista)
 
 Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pulls)! :D
 
@@ -53,7 +54,7 @@ express | lookup wildcard route x 48,479 ops/sec ±109.54% (16 runs sampled)
 ```
 
 ### Run the benchmarks
-Do you wan to run the benchmarks by yourself?  
+Do you wan to run the benchmarks by yourself?
 Run the following:
 ```bash
 git clone https://github.com/delvedor/router-benchmark
