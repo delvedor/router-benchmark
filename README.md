@@ -54,7 +54,7 @@ express | lookup wildcard route x 48,479 ops/sec ±109.54% (16 runs sampled)
 ```
 
 ### Run the benchmarks
-Do you wan to run the benchmarks by yourself?
+Do you wan to run the benchmarks by yourself?  
 Run the following:
 ```bash
 git clone https://github.com/delvedor/router-benchmark
