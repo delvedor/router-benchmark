@@ -10,6 +10,7 @@ Tested routers:
 - [router](https://github.com/pillarjs/router)
 - [server-router](https://github.com/yoshuawuyts/server-router)
 - [express](https://www.npmjs.com/package/express)
+- [barista](https://kieran.github.io/barista)
 
 Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pulls)! :D
 
