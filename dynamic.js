@@ -24,6 +24,8 @@ const callRouter = new call.Router()
 const express = require('express/lib/router')()
 const Barista = require('Barista').Router
 const barista = new Barista()
+const RadixRouter = require('radix-router')
+const radixRouter = new RadixRouter()
 
 findMyWay.on('GET', url, noop)
 routeRecognizer.add([{ path: url, handler: noop }])
@@ -33,6 +35,9 @@ koaRouter.get(url, noop)
 callRouter.add({ method: 'GET', path: '/bench/{mark}' })
 express.route(url).get(() => {})
 barista.get(url, 'window.noop')
+radixRouter.insert({
+  path: url
+})
 
 suite
   .add('find-my-way | lookup dynamic route', function () {
@@ -61,6 +66,9 @@ suite
   })
   .add('barista | lookup dynamic route', function () {
     barista.first(req.url, req.method)
+  })
+  .add('radix-router | lookup dynamic route', function () {
+    radixRouter.lookup(req.url)
   })
   .on('cycle', function (event) {
     console.log(String(event.target))

@@ -24,6 +24,8 @@ const routr = new Routr([{
 const express = require('express/lib/router')()
 const Barista = require('Barista').Router
 const barista = new Barista()
+const RadixRouter = require('radix-router')
+const radixRouter = new RadixRouter()
 
 findMyWay.on('GET', url, noop)
 routeRecognizer.add([{ path: url, handler: noop }])
@@ -33,6 +35,9 @@ koaRouter.get(url, noop)
 // callRouter.add({ method: 'GET', path: '{params*}' })
 express.route(url).get(() => {})
 barista.get(`${url}name`, 'window.noop')
+radixRouter.insert({
+  path: url
+})
 
 suite
   .add('find-my-way | lookup wildcard route', function () {
@@ -61,6 +66,9 @@ suite
   })
   .add('barista | lookup wildcard route', function () {
     barista.first(req.url, req.method)
+  })
+  .add('radix-router | lookup wildcard route', function () {
+    radixRouter.lookup(req.url)
   })
   .on('cycle', function (event) {
     console.log(String(event.target))
