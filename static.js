@@ -43,6 +43,9 @@ suite
   .add('find-my-way | lookup static route', function () {
     findMyWay.lookup(req, null)
   })
+  .add('find-my-way | find static route', function () {
+    findMyWay.find(req.method, req.url)
+  })
   .add('route-recognizer | lookup static route', function () {
     routeRecognizer.recognize(url)
   })
@@ -59,7 +62,7 @@ suite
     routr.getRoute(url)
   })
   .add('call | lookup static route', function () {
-    callRouter.route('GET', url)
+    callRouter.route('get', url)
   })
   .add('express | lookup static route', function () {
     express.handle(req, null, noop)

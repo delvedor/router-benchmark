@@ -19,8 +19,8 @@ const routr = new Routr([{
   path: url,
   method: 'GET'
 }])
-// const call = require('call')
-// const callRouter = new call.Router()
+const call = require('call')
+const callRouter = new call.Router()
 const express = require('express/lib/router')()
 const Barista = require('Barista').Router
 const barista = new Barista()
@@ -32,7 +32,7 @@ routeRecognizer.add([{ path: url, handler: noop }])
 router.get(url, noop)
 serverRouter.route('GET', url, noop)
 koaRouter.get(url, noop)
-// callRouter.add({ method: 'GET', path: '{params*}' })
+callRouter.add({ method: 'GET', path: '/{params*}' })
 express.route(url).get(() => {})
 barista.get(`${url}name`, 'window.noop')
 radixRouter.insert({
@@ -42,6 +42,9 @@ radixRouter.insert({
 suite
   .add('find-my-way | lookup wildcard route', function () {
     findMyWay.lookup(req, null)
+  })
+  .add('find-my-way | find wildcard route', function () {
+    findMyWay.find(req.method, req.url)
   })
   .add('route-recognizer | lookup wildcard route', function () {
     routeRecognizer.recognize(req.url)
@@ -58,9 +61,9 @@ suite
   .add('routr | lookup wildcard route', function () {
     routr.getRoute(req.url)
   })
-  /* .add('call | lookup wildcard route', function () {
-    callRouter.route('GET', req.url)
-  }) */
+  .add('call | lookup wildcard route', function () {
+    callRouter.route('get', req.url)
+  })
   .add('express | lookup wildcard route', function () {
     express.handle(req, null, noop)
   })

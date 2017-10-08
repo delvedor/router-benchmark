@@ -43,6 +43,9 @@ suite
   .add('find-my-way | lookup dynamic route', function () {
     findMyWay.lookup(req, null)
   })
+  .add('find-my-way | find dynamic route', function () {
+    findMyWay.find(req.method, req.url)
+  })
   .add('route-recognizer | lookup dynamic route', function () {
     routeRecognizer.recognize(req.url)
   })
@@ -59,7 +62,7 @@ suite
     routr.getRoute(req.url)
   })
   .add('call | lookup dynamic route', function () {
-    callRouter.route('GET', req.url)
+    callRouter.route('get', req.url)
   })
   .add('express | lookup dynamic route', function () {
     express.handle(req, null, noop)
