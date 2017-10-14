@@ -17,6 +17,7 @@ const routes = [
 
 function noop () {}
 var i = 0
+var time = 0
 const operations = 1000000
 
 routes.forEach(route => {
@@ -27,35 +28,44 @@ routes.forEach(route => {
   }
 })
 
-console.time('short dynamic')
+time = now()
 for (i = 0; i < operations; i++) {
   router.url('/user/1234')
 }
-console.timeEnd('short dynamic')
+console.log('short dynamic:', getOperationsPerSecond(now() - time), 'ops/sec')
 
-console.time('mixed static dynamic')
+time = now()
 for (i = 0; i < operations; i++) {
   router.url('/event/abcd1234/comments')
 }
-console.timeEnd('mixed static dynamic')
+console.log('mixed static dynamic:', getOperationsPerSecond(now() - time), 'ops/sec')
 
-console.time('short static')
+time = now()
 for (i = 0; i < operations; i++) {
   router.url('/status')
 }
-console.timeEnd('short static')
+console.log('long static:', getOperationsPerSecond(now() - time), 'ops/sec')
 
-console.time('long static')
+time = now()
 for (i = 0; i < operations; i++) {
   router.url('/very/deeply/nested/route/hello/there')
 }
-console.timeEnd('long static')
+console.log('long static:', getOperationsPerSecond(now() - time), 'ops/sec')
 
-console.time('all together')
+time = now()
 for (i = 0; i < operations; i++) {
   router.url('/user/1234')
   router.url('/event/abcd1234/comments')
   router.url('/status')
   router.url('/very/deeply/nested/route/hello/there')
 }
-console.timeEnd('all together')
+console.log('all together:', getOperationsPerSecond(now() - time), 'ops/sec')
+
+function now () {
+  var ts = process.hrtime()
+  return (ts[0] * 1e3) + (ts[1] / 1e6)
+}
+
+function getOperationsPerSecond (ms) {
+  return Number(((operations * 1000) / ms).toFixed()).toLocaleString()
+}
