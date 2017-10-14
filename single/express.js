@@ -27,31 +27,31 @@ routes.forEach(route => {
 })
 
 console.time('short dynamic')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.handle({ method: 'GET', url: '/user/1234' }, null, noop)
 }
 console.timeEnd('short dynamic')
 
 console.time('mixed static dynamic')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.handle({ method: 'GET', url: '/event/abcd1234/comments' }, null, noop)
 }
 console.timeEnd('mixed static dynamic')
 
 console.time('short static')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.handle({ method: 'GET', url: '/status' }, null, noop)
 }
 console.timeEnd('short static')
 
 console.time('long static')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.handle({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null, noop)
 }
 console.timeEnd('long static')
 
 console.time('all together')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.handle({ method: 'GET', url: '/user/1234' }, null, noop)
   router.handle({ method: 'GET', url: '/event/abcd1234/comments' }, null, noop)
   router.handle({ method: 'GET', url: '/status' }, null, noop)

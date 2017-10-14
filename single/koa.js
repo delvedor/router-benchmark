@@ -28,31 +28,31 @@ routes.forEach(route => {
 })
 
 console.time('short dynamic')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.url('/user/1234')
 }
 console.timeEnd('short dynamic')
 
 console.time('mixed static dynamic')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.url('/event/abcd1234/comments')
 }
 console.timeEnd('mixed static dynamic')
 
 console.time('short static')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.url('/status')
 }
 console.timeEnd('short static')
 
 console.time('long static')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.url('/very/deeply/nested/route/hello/there')
 }
 console.timeEnd('long static')
 
 console.time('all together')
-for (var i = 0; i < operations; i++) {
+for (i = 0; i < operations; i++) {
   router.url('/user/1234')
   router.url('/event/abcd1234/comments')
   router.url('/status')
