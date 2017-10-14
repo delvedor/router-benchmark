@@ -8,7 +8,8 @@
     "static": "node static.js",
     "dynamic": "node dynamic.js",
     "wildcard": "node wildcard.js",
-    "all": "npm run static && npm run dynamic && npm run wildcard"
+    "all": "npm run static && npm run dynamic && npm run wildcard",
+    "single": "node single/find-my-way.js && node single/call.js && node single/express.js && node single/koa.js"
   },
   "keywords": [],
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
