@@ -1,6 +1,6 @@
 'use strict'
 
-const { title, now, print, operations } = require('./utils')
+const { title, now, print, operations } = require('../utils')
 const Routr = require('routr')
 
 title('routr benchmark')

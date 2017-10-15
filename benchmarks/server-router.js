@@ -1,9 +1,9 @@
 'use strict'
 
-const { title, now, print, operations } = require('./utils')
-const router = require('router')()
+const { title, now, print, operations } = require('../utils')
+const router = require('server-router')()
 
-title('router benchmark')
+title('server-router benchmark')
 
 const routes = [
   { method: 'GET', url: '/user/:id' },
@@ -22,49 +22,45 @@ var i = 0
 var time = 0
 
 routes.forEach(route => {
-  if (route.method === 'GET') {
-    router.get(route.url, noop)
-  } else {
-    router.post(route.url, noop)
-  }
+  router.route(route.method, route.url, noop)
 })
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/user/1234' }, null, noop)
+  router.match({ method: 'GET', url: '/user/1234' }, null)
 }
 print('short dynamic:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/event/abcd1234/comments' }, null, noop)
+  router.match({ method: 'GET', url: '/event/abcd1234/comments' }, null)
 }
 print('mixed static dynamic:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/status' }, null, noop)
+  router.match({ method: 'GET', url: '/status' }, null)
 }
 print('short static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null, noop)
+  router.match({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null)
 }
 print('long static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/static/index.html' }, null, noop)
+  router.match({ method: 'GET', url: '/static/index.html' }, null)
 }
 print('wildcard:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/user/1234' }, null, noop)
-  router({ method: 'GET', url: '/event/abcd1234/comments' }, null, noop)
-  router({ method: 'GET', url: '/status' }, null, noop)
-  router({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null, noop)
-  router({ method: 'GET', url: '/static/index.html' }, null, noop)
+  router.match({ method: 'GET', url: '/user/1234' }, null)
+  router.match({ method: 'GET', url: '/status' }, null)
+  router.match({ method: 'GET', url: '/event/abcd1234/comments' }, null)
+  router.match({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null)
+  router.match({ method: 'GET', url: '/static/index.html' }, null)
 }
 print('all together:', time)

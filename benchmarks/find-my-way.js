@@ -1,9 +1,9 @@
 'use strict'
 
-const { title, now, print, operations } = require('./utils')
-const router = require('server-router')()
+const { title, now, print, operations } = require('../utils')
+const router = require('find-my-way')()
 
-title('server-router benchmark')
+title('find-my-way benchmark')
 
 const routes = [
   { method: 'GET', url: '/user/:id' },
@@ -22,45 +22,45 @@ var i = 0
 var time = 0
 
 routes.forEach(route => {
-  router.route(route.method, route.url, noop)
+  router.on(route.method, route.url, noop)
 })
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/user/1234' }, null)
+  router.find('GET', '/user/1234')
 }
 print('short dynamic:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/event/abcd1234/comments' }, null)
+  router.find('GET', '/event/abcd1234/comments')
 }
 print('mixed static dynamic:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/status' }, null)
+  router.find('GET', '/status')
 }
 print('short static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null)
+  router.find('GET', '/very/deeply/nested/route/hello/there')
 }
 print('long static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/static/index.html' }, null)
+  router.find('GET', '/static/index.html')
 }
 print('wildcard:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/user/1234' }, null)
-  router.match({ method: 'GET', url: '/status' }, null)
-  router.match({ method: 'GET', url: '/event/abcd1234/comments' }, null)
-  router.match({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null)
-  router.match({ method: 'GET', url: '/static/index.html' }, null)
+  router.find('GET', '/user/1234')
+  router.find('GET', '/status')
+  router.find('GET', '/event/abcd1234/comments')
+  router.find('GET', '/very/deeply/nested/route/hello/there')
+  router.find('GET', '/static/index.html')
 }
 print('all together:', time)
