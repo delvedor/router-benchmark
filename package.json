@@ -5,25 +5,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node single/runner.js",
-    "test": "standard",
-    "static": "node static.js",
-    "dynamic": "node dynamic.js",
-    "wildcard": "node wildcard.js",
-    "all": "npm run static && npm run dynamic && npm run wildcard"
+    "start": "node runner.js",
+    "test": "standard"
   },
   "keywords": [],
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "barista": "^0.5.3",
-    "benchmark": "^2.1.4",
     "call": "^5.0.0",
     "express": "^4.16.2",
     "find-my-way": "^1.7.0",
     "koa-router": "^7.2.1",
-    "radix-router": "^3.0.1",
-    "route-recognizer": "^0.3.3",
     "router": "^1.3.2",
     "routr": "^2.1.0",
     "server-router": "^6.0.0"
