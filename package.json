@@ -5,12 +5,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node single/runner.js",
     "test": "standard",
     "static": "node static.js",
     "dynamic": "node dynamic.js",
     "wildcard": "node wildcard.js",
-    "all": "npm run static && npm run dynamic && npm run wildcard",
-    "single": "node single/find-my-way.js && node single/call.js && node single/express.js && node single/koa.js"
+    "all": "npm run static && npm run dynamic && npm run wildcard"
   },
   "keywords": [],
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
@@ -29,6 +29,7 @@
     "server-router": "^6.0.0"
   },
   "devDependencies": {
+    "chalk": "^2.1.0",
     "standard": "^10.0.3"
   }
 }
