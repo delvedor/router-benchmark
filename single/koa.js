@@ -1,8 +1,10 @@
 'use strict'
 
-console.log('\nkoa benchmark')
+const { title, now, print } = require('./utils')
 const KoaRouter = require('koa-router')
 const router = new KoaRouter()
+
+title('koa benchmark')
 
 const routes = [
   { method: 'GET', url: '/user/:id' },
@@ -12,7 +14,8 @@ const routes = [
   { method: 'POST', url: '/event/:id/comment' },
   { method: 'GET', url: '/map/:location/events' },
   { method: 'GET', url: '/status' },
-  { method: 'GET', url: '/very/deeply/nested/route/hello/there' }
+  { method: 'GET', url: '/very/deeply/nested/route/hello/there' },
+  { method: 'GET', url: '/static/*' }
 ]
 
 function noop () {}
@@ -32,25 +35,31 @@ time = now()
 for (i = 0; i < operations; i++) {
   router.url('/user/1234')
 }
-console.log('short dynamic:', getOperationsPerSecond(now() - time), 'ops/sec')
+print('short dynamic:', time, operations)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.url('/event/abcd1234/comments')
 }
-console.log('mixed static dynamic:', getOperationsPerSecond(now() - time), 'ops/sec')
+print('mixed static dynamic:', time, operations)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.url('/status')
 }
-console.log('long static:', getOperationsPerSecond(now() - time), 'ops/sec')
+print('short static:', time, operations)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.url('/very/deeply/nested/route/hello/there')
 }
-console.log('long static:', getOperationsPerSecond(now() - time), 'ops/sec')
+print('long static:', time, operations)
+
+time = now()
+for (i = 0; i < operations; i++) {
+  router.url('/static/index.html')
+}
+print('wildcard:', time, operations)
 
 time = now()
 for (i = 0; i < operations; i++) {
@@ -58,14 +67,6 @@ for (i = 0; i < operations; i++) {
   router.url('/event/abcd1234/comments')
   router.url('/status')
   router.url('/very/deeply/nested/route/hello/there')
+  router.url('/static/index.html')
 }
-console.log('all together:', getOperationsPerSecond(now() - time), 'ops/sec')
-
-function now () {
-  var ts = process.hrtime()
-  return (ts[0] * 1e3) + (ts[1] / 1e6)
-}
-
-function getOperationsPerSecond (ms) {
-  return Number(((operations * 1000) / ms).toFixed()).toLocaleString()
-}
+print('all together:', time, operations)
