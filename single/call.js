@@ -1,6 +1,6 @@
 'use strict'
 
-const { title, now, print } = require('./utils')
+const { title, now, print, operations } = require('./utils')
 const call = require('call')
 const router = new call.Router()
 
@@ -21,7 +21,6 @@ const routes = [
 function noop () {}
 var i = 0
 var time = 0
-const operations = 1000000
 
 routes.forEach(route => {
   router.add(route, noop)
@@ -31,31 +30,31 @@ time = now()
 for (i = 0; i < operations; i++) {
   router.route('get', '/user/1234')
 }
-print('short dynamic:', time, operations)
+print('short dynamic:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.route('get', '/event/abcd1234/comments')
 }
-print('mixed static dynamic:', time, operations)
+print('mixed static dynamic:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.route('get', '/status')
 }
-print('short static:', time, operations)
+print('short static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.route('get', '/very/deeply/nested/route/hello/there')
 }
-print('long static:', time, operations)
+print('long static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.route('get', '/static/index.html')
 }
-print('wildcard:', time, operations)
+print('wildcard:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
@@ -65,4 +64,4 @@ for (i = 0; i < operations; i++) {
   router.route('get', '/very/deeply/nested/route/hello/there')
   router.route('get', '/static/index.html')
 }
-print('all together:', time, operations)
+print('all together:', time)
