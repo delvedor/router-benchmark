@@ -9,7 +9,8 @@ const benchmarks = [
   'express.js',
   'koa.js',
   'routr.js',
-  'server-router.js'
+  'server-router.js',
+  'router.js'
 ]
 
 const queue = new Queue()
