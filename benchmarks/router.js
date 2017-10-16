@@ -6,8 +6,11 @@ const router = require('router')()
 title('router benchmark')
 
 const routes = [
-  { method: 'GET', url: '/user/:id' },
-  { method: 'POST', url: '/user/:id' },
+  { method: 'GET', url: '/user' },
+  { method: 'GET', url: '/user/comments' },
+  { method: 'GET', url: '/user/avatar' },
+  { method: 'GET', url: '/user/lookup/username/:username' },
+  { method: 'GET', url: '/user/lookup/email/:address' },
   { method: 'GET', url: '/event/:id' },
   { method: 'GET', url: '/event/:id/comments' },
   { method: 'POST', url: '/event/:id/comment' },
@@ -31,21 +34,27 @@ routes.forEach(route => {
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/user/1234' }, null, noop)
+  router({ method: 'GET', url: '/user' }, null, noop)
 }
-print('short dynamic:', time)
+print('short static:', time)
+
+time = now()
+for (i = 0; i < operations; i++) {
+  router({ method: 'GET', url: '/user/comments' }, null, noop)
+}
+print('static with same radix:', time)
+
+time = now()
+for (i = 0; i < operations; i++) {
+  router({ method: 'GET', url: '/user/lookup/username/john' }, null, noop)
+}
+print('dynamic route:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router({ method: 'GET', url: '/event/abcd1234/comments' }, null, noop)
 }
 print('mixed static dynamic:', time)
-
-time = now()
-for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/status' }, null, noop)
-}
-print('short static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
@@ -61,9 +70,10 @@ print('wildcard:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router({ method: 'GET', url: '/user/1234' }, null, noop)
+  router({ method: 'GET', url: '/user' }, null, noop)
+  router({ method: 'GET', url: '/user/comments' }, null, noop)
+  router({ method: 'GET', url: '/user/lookup/username/john' }, null, noop)
   router({ method: 'GET', url: '/event/abcd1234/comments' }, null, noop)
-  router({ method: 'GET', url: '/status' }, null, noop)
   router({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null, noop)
   router({ method: 'GET', url: '/static/index.html' }, null, noop)
 }

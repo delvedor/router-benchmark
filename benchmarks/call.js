@@ -7,8 +7,11 @@ const router = new call.Router()
 title('call benchmark')
 
 const routes = [
-  { method: 'GET', path: '/user/{id}' },
-  { method: 'POST', path: '/user/{id}' },
+  { method: 'GET', path: '/user' },
+  { method: 'GET', path: '/user/comments' },
+  { method: 'GET', path: '/user/avatar' },
+  { method: 'GET', path: '/user/lookup/username/{username}' },
+  { method: 'GET', path: '/user/lookup/email/{address}' },
   { method: 'GET', path: '/event/{id}' },
   { method: 'GET', path: '/event/{id}/comments' },
   { method: 'POST', path: '/event/{id}/comment' },
@@ -28,21 +31,27 @@ routes.forEach(route => {
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.route('get', '/user/1234')
+  router.route('get', '/user')
 }
-print('short dynamic:', time)
+print('short static:', time)
+
+time = now()
+for (i = 0; i < operations; i++) {
+  router.route('get', '/user/comments')
+}
+print('static with same radix:', time)
+
+time = now()
+for (i = 0; i < operations; i++) {
+  router.route('get', '/user/lookup/username/john')
+}
+print('dynamic route:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.route('get', '/event/abcd1234/comments')
 }
 print('mixed static dynamic:', time)
-
-time = now()
-for (i = 0; i < operations; i++) {
-  router.route('get', '/status')
-}
-print('short static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
@@ -58,8 +67,9 @@ print('wildcard:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.route('get', '/user/1234')
-  router.route('get', '/status')
+  router.route('get', '/user')
+  router.route('get', '/user/comments')
+  router.route('get', '/user/lookup/username/john')
   router.route('get', '/event/abcd1234/comments')
   router.route('get', '/very/deeply/nested/route/hello/there')
   router.route('get', '/static/index.html')

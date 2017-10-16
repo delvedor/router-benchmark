@@ -18,78 +18,85 @@ Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pul
 
 <a name="results"></a>
 ## Results
-*These benchmarks where taken under node v8.6.0, on a MacBook Pro Retina Late 2013 (i7, 16GB of RAM).*
+*These benchmarks where taken under node v8.7.0, on a MacBook Pro Retina Late 2013 (i7, 16GB of RAM).*
 
 ```
 =======================
  find-my-way benchmark
 =======================
-short dynamic: 2,148,584 ops/sec
-mixed static dynamic: 1,382,992 ops/sec
-short static: 6,665,685 ops/sec
-long static: 6,886,939 ops/sec
-wildcard: 2,612,277 ops/sec
-all together: 569,705 ops/sec
+short static: 9,931,560 ops/sec
+static with same radix: 4,601,484 ops/sec
+dynamic route: 1,064,340 ops/sec
+mixed static dynamic: 1,080,315 ops/sec
+long static: 5,763,034 ops/sec
+wildcard: 1,335,130 ops/sec
+all together: 309,842 ops/sec
 
 ================
  call benchmark
 ================
-short dynamic: 1,016,059 ops/sec
-mixed static dynamic: 570,699 ops/sec
-short static: 2,958,576 ops/sec
-long static: 2,938,108 ops/sec
-wildcard: 580,286 ops/sec
-all together: 169,676 ops/sec
+short static: 2,491,401 ops/sec
+static with same radix: 2,706,946 ops/sec
+dynamic route: 483,521 ops/sec
+mixed static dynamic: 503,713 ops/sec
+long static: 3,033,847 ops/sec
+wildcard: 697,979 ops/sec
+all together: 147,164 ops/sec
 
 ===================
  express benchmark
 ===================
-short dynamic: 706,210 ops/sec
-mixed static dynamic: 577,051 ops/sec
-short static: 848,192 ops/sec
-long static: 725,844 ops/sec
-wildcard: 421,825 ops/sec
-all together: 117,530 ops/sec
+short static: 1,065,029 ops/sec
+static with same radix: 1,057,056 ops/sec
+dynamic route: 511,982 ops/sec
+mixed static dynamic: 452,778 ops/sec
+long static: 604,326 ops/sec
+wildcard: 372,483 ops/sec
+all together: 91,631 ops/sec
 
 ===============
  koa benchmark
 ===============
-short dynamic: 297,187 ops/sec
-mixed static dynamic: 298,765 ops/sec
-short static: 303,449 ops/sec
-long static: 306,759 ops/sec
-wildcard: 305,490 ops/sec
-all together: 59,996 ops/sec
+short static: 269,965 ops/sec
+static with same radix: 268,550 ops/sec
+dynamic route: 261,210 ops/sec
+mixed static dynamic: 254,778 ops/sec
+long static: 273,391 ops/sec
+wildcard: 271,932 ops/sec
+all together: 44,596 ops/sec
 
 =================
  routr benchmark
 =================
-short dynamic: 1,373,274 ops/sec
-mixed static dynamic: 661,407 ops/sec
-short static: 612,664 ops/sec
-long static: 505,629 ops/sec
-wildcard: 343,636 ops/sec
-all together: 108,741 ops/sec
+short static: 3,932,952 ops/sec
+static with same radix: 2,108,153 ops/sec
+dynamic route: 707,828 ops/sec
+mixed static dynamic: 473,430 ops/sec
+long static: 429,040 ops/sec
+wildcard: 296,470 ops/sec
+all together: 95,131 ops/sec
 
 =========================
  server-router benchmark
 =========================
-short dynamic: 367,919 ops/sec
-mixed static dynamic: 341,177 ops/sec
-short static: 564,836 ops/sec
-long static: 302,930 ops/sec
-wildcard: 352,548 ops/sec
-all together: 73,521 ops/sec
+short static: 468,729 ops/sec
+static with same radix: 400,674 ops/sec
+dynamic route: 279,790 ops/sec
+mixed static dynamic: 288,617 ops/sec
+long static: 262,922 ops/sec
+wildcard: 307,438 ops/sec
+all together: 52,897 ops/sec
 
 ==================
  router benchmark
 ==================
-short dynamic: 733,509 ops/sec
-mixed static dynamic: 600,667 ops/sec
-short static: 832,272 ops/sec
-long static: 715,656 ops/sec
-wildcard: 447,905 ops/sec
-all together: 118,799 ops/sec
+short static: 1,155,635 ops/sec
+static with same radix: 1,087,020 ops/sec
+dynamic route: 534,661 ops/sec
+mixed static dynamic: 453,982 ops/sec
+long static: 620,895 ops/sec
+wildcard: 373,879 ops/sec
+all together: 94,976 ops/sec
 ```
 
 ### Run the benchmarks
@@ -107,8 +114,11 @@ npm start
 
 To emulate a real world situation every router registers the following routes:
 ```
-{ method: 'GET', url: '/user/:id' },
-{ method: 'POST', url: '/user/:id' },
+{ method: 'GET', url: '/user' },
+{ method: 'GET', url: '/user/comments' },
+{ method: 'GET', url: '/user/avatar' },
+{ method: 'GET', url: '/user/lookup/username/:username' },
+{ method: 'GET', url: '/user/lookup/email/:address' },
 { method: 'GET', url: '/event/:id' },
 { method: 'GET', url: '/event/:id/comments' },
 { method: 'POST', url: '/event/:id/comment' },
@@ -119,9 +129,10 @@ To emulate a real world situation every router registers the following routes:
 ```
 Then the following routes are tested:
 ```
-short dynamic: { method: 'GET', url: '/user/1234' },
+short static: { method: 'GET', url: '/user' }
+static with same radix: { method: 'GET', url: '/user/comments' }
+dynamic route: { method: 'GET', url: '/user/lookup/username/john' }
 mixed static dynamic: { method: 'GET', url: '/event/abcd1234/comments' },
-short static: { method: 'GET', url: '/status' },
 long static: { method: 'GET', url: '/very/deeply/nested/route/hello/there' },
 wildcard: { method: 'GET', url: '/static/index.html' }
 all together: all the above at the same time
