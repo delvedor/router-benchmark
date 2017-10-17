@@ -7,8 +7,11 @@ const router = new KoaRouter()
 title('koa benchmark')
 
 const routes = [
-  { method: 'GET', url: '/user/:id' },
-  { method: 'POST', url: '/user/:id' },
+  { method: 'GET', url: '/user' },
+  { method: 'GET', url: '/user/comments' },
+  { method: 'GET', url: '/user/avatar' },
+  { method: 'GET', url: '/user/lookup/username/:username' },
+  { method: 'GET', url: '/user/lookup/email/:address' },
   { method: 'GET', url: '/event/:id' },
   { method: 'GET', url: '/event/:id/comments' },
   { method: 'POST', url: '/event/:id/comment' },
@@ -32,21 +35,27 @@ routes.forEach(route => {
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.url('/user/1234')
+  router.url('/user')
 }
-print('short dynamic:', time)
+print('short static:', time)
+
+time = now()
+for (i = 0; i < operations; i++) {
+  router.url('/user/comments')
+}
+print('static with same radix:', time)
+
+time = now()
+for (i = 0; i < operations; i++) {
+  router.url('/user/lookup/username/john')
+}
+print('dynamic route:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
   router.url('/event/abcd1234/comments')
 }
 print('mixed static dynamic:', time)
-
-time = now()
-for (i = 0; i < operations; i++) {
-  router.url('/status')
-}
-print('short static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
@@ -62,9 +71,10 @@ print('wildcard:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.url('/user/1234')
+  router.url('/user')
+  router.url('/user/comments')
+  router.url('/user/lookup/username/john')
   router.url('/event/abcd1234/comments')
-  router.url('/status')
   router.url('/very/deeply/nested/route/hello/there')
   router.url('/static/index.html')
 }
