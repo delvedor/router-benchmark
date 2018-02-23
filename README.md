@@ -5,13 +5,15 @@
 Benchmark of the most commonly used http routers.
 
 Tested routers:
+
 - [find-my-way](https://github.com/delvedor/find-my-way)
 - [call](https://github.com/hapijs/call)
-- [routr](https://github.com/yahoo/routr)
-- [koa-router](https://github.com/alexmingoia/koa-router)
-- [router](https://github.com/pillarjs/router)
-- [server-router](https://github.com/yoshuawuyts/server-router)
 - [express](https://www.npmjs.com/package/express)
+- [koa-router](https://github.com/alexmingoia/koa-router)
+- [koa-tree-router](https://github.com/steambap/koa-tree-router)
+- [router](https://github.com/pillarjs/router)
+- [routr](https://github.com/yahoo/routr)
+- [server-router](https://github.com/yoshuawuyts/server-router)
 
 This benchmarks aims to test only http routers, so the method handling should be included.  
 Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pulls)! :D

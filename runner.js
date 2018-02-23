@@ -8,10 +8,11 @@ const benchmarks = [
   'find-my-way.js',
   'call.js',
   'express.js',
-  'koa.js',
+  'koa-router.js',
+  'koa-tree-router.js',
+  'router.js',
   'routr.js',
-  'server-router.js',
-  'router.js'
+  'server-router.js'
 ]
 
 const queue = new Queue()

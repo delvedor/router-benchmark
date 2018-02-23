@@ -3,7 +3,7 @@
 const { title, now, print, operations } = require('../utils')
 const router = require('express/lib/router')()
 
-title('express benchmark')
+title('express benchmark (WARNING: includes handling)')
 
 const routes = [
   { method: 'GET', url: '/user' },

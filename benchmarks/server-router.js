@@ -30,47 +30,47 @@ routes.forEach(route => {
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/user' })
+  router._router.match('GET/user')
 }
 print('short static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/user/comments' })
+  router._router.match('GET/user/comments')
 }
 print('static with same radix:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/user/lookup/username/john' })
+  router._router.match('GET/user/lookup/username/john')
 }
 print('dynamic route:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/event/abcd1234/comments' }, null)
+  router._router.match('GET/event/abcd1234/comments')
 }
 print('mixed static dynamic:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null)
+  router._router.match('GET/very/deeply/nested/route/hello/there')
 }
 print('long static:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/static/index.html' }, null)
+  router._router.match('GET/static/index.html')
 }
 print('wildcard:', time)
 
 time = now()
 for (i = 0; i < operations; i++) {
-  router.match({ method: 'GET', url: '/user' })
-  router.match({ method: 'GET', url: '/user/comments' })
-  router.match({ method: 'GET', url: '/user/lookup/username/john' })
-  router.match({ method: 'GET', url: '/event/abcd1234/comments' }, null)
-  router.match({ method: 'GET', url: '/very/deeply/nested/route/hello/there' }, null)
-  router.match({ method: 'GET', url: '/static/index.html' }, null)
+  router._router.match('GET/user')
+  router._router.match('GET/user/comments')
+  router._router.match('GET/user/lookup/username/john')
+  router._router.match('GET/event/abcd1234/comments')
+  router._router.match('GET/very/deeply/nested/route/hello/there')
+  router._router.match('GET/static/index.html')
 }
 print('all together:', time)
