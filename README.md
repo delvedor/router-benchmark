@@ -14,6 +14,7 @@ Tested routers:
 - [router](https://github.com/pillarjs/router)
 - [routr](https://github.com/yahoo/routr)
 - [server-router](https://github.com/yoshuawuyts/server-router)
+- [trek-router](https://www.npmjs.com/package/trek-router)
 
 This benchmarks aims to test only http routers, so the method handling should be included.  
 Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pulls)! :D

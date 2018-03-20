@@ -13,6 +13,7 @@ const benchmarks = [
   'router.js',
   'routr.js',
   'server-router.js'
+  'trek-router.js'
 ]
 
 const queue = new Queue()
