@@ -12,7 +12,7 @@ const benchmarks = [
   'koa-tree-router.js',
   'router.js',
   'routr.js',
-  'server-router.js'
+  'server-router.js',
   'trek-router.js'
 ]
 

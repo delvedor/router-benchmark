@@ -21,85 +21,107 @@ Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pul
 
 <a name="results"></a>
 ## Results
-*These benchmarks where taken under node v8.7.0, on a MacBook Pro Retina Late 2013 (i7, 16GB of RAM).*
+*These benchmarks where taken under node v8.9.0, on a MacBook Pro Retina Late 2013 (i7, 16GB of RAM).*
 
 ```
 =======================
  find-my-way benchmark
 =======================
-short static: 9,931,560 ops/sec
-static with same radix: 4,601,484 ops/sec
-dynamic route: 1,064,340 ops/sec
-mixed static dynamic: 1,080,315 ops/sec
-long static: 5,763,034 ops/sec
-wildcard: 1,335,130 ops/sec
-all together: 309,842 ops/sec
+short static: 10,102,066 ops/sec
+static with same radix: 3,887,679 ops/sec
+dynamic route: 1,637,929 ops/sec
+mixed static dynamic: 2,289,554 ops/sec
+long static: 5,403,719 ops/sec
+wildcard: 3,037,119 ops/sec
+all together: 525,798 ops/sec
 
 ================
  call benchmark
 ================
-short static: 2,491,401 ops/sec
-static with same radix: 2,706,946 ops/sec
-dynamic route: 483,521 ops/sec
-mixed static dynamic: 503,713 ops/sec
-long static: 3,033,847 ops/sec
-wildcard: 697,979 ops/sec
-all together: 147,164 ops/sec
+short static: 3,123,503 ops/sec
+static with same radix: 3,094,106 ops/sec
+dynamic route: 578,251 ops/sec
+mixed static dynamic: 632,624 ops/sec
+long static: 3,491,147 ops/sec
+wildcard: 884,869 ops/sec
+all together: 181,587 ops/sec
 
-===================
- express benchmark
-===================
-short static: 1,065,029 ops/sec
-static with same radix: 1,057,056 ops/sec
-dynamic route: 511,982 ops/sec
-mixed static dynamic: 452,778 ops/sec
-long static: 604,326 ops/sec
-wildcard: 372,483 ops/sec
-all together: 91,631 ops/sec
+================================================
+ express benchmark (WARNING: includes handling)
+================================================
+short static: 1,145,409 ops/sec
+static with same radix: 1,102,656 ops/sec
+dynamic route: 595,169 ops/sec
+mixed static dynamic: 513,327 ops/sec
+long static: 642,545 ops/sec
+wildcard: 407,398 ops/sec
+all together: 100,184 ops/sec
 
-===============
- koa benchmark
-===============
-short static: 269,965 ops/sec
-static with same radix: 268,550 ops/sec
-dynamic route: 261,210 ops/sec
-mixed static dynamic: 254,778 ops/sec
-long static: 273,391 ops/sec
-wildcard: 271,932 ops/sec
-all together: 44,596 ops/sec
+======================
+ koa-router benchmark
+======================
+short static: 1,004,122 ops/sec
+static with same radix: 1,029,369 ops/sec
+dynamic route: 1,015,635 ops/sec
+mixed static dynamic: 968,784 ops/sec
+long static: 1,027,857 ops/sec
+wildcard: 1,033,432 ops/sec
+all together: 161,220 ops/sec
+
+===========================
+ koa-tree-router benchmark
+===========================
+short static: 11,756,182 ops/sec
+static with same radix: 6,212,981 ops/sec
+dynamic route: 3,221,744 ops/sec
+mixed static dynamic: 4,160,595 ops/sec
+long static: 7,723,753 ops/sec
+wildcard: 4,469,051 ops/sec
+all together: 924,587 ops/sec
+
+===============================================
+ router benchmark (WARNING: includes handling)
+===============================================
+short static: 1,176,121 ops/sec
+static with same radix: 1,110,484 ops/sec
+dynamic route: 628,130 ops/sec
+mixed static dynamic: 536,107 ops/sec
+long static: 678,598 ops/sec
+wildcard: 356,475 ops/sec
+all together: 99,443 ops/sec
 
 =================
  routr benchmark
 =================
-short static: 3,932,952 ops/sec
-static with same radix: 2,108,153 ops/sec
-dynamic route: 707,828 ops/sec
-mixed static dynamic: 473,430 ops/sec
-long static: 429,040 ops/sec
-wildcard: 296,470 ops/sec
-all together: 95,131 ops/sec
+short static: 4,562,784 ops/sec
+static with same radix: 2,530,725 ops/sec
+dynamic route: 850,739 ops/sec
+mixed static dynamic: 553,497 ops/sec
+long static: 520,461 ops/sec
+wildcard: 348,495 ops/sec
+all together: 108,098 ops/sec
 
 =========================
  server-router benchmark
 =========================
-short static: 468,729 ops/sec
-static with same radix: 400,674 ops/sec
-dynamic route: 279,790 ops/sec
-mixed static dynamic: 288,617 ops/sec
-long static: 262,922 ops/sec
-wildcard: 307,438 ops/sec
-all together: 52,897 ops/sec
+short static: 2,500,623 ops/sec
+static with same radix: 2,404,634 ops/sec
+dynamic route: 1,102,154 ops/sec
+mixed static dynamic: 1,094,229 ops/sec
+long static: 1,555,080 ops/sec
+wildcard: 924,381 ops/sec
+all together: 215,779 ops/sec
 
-==================
- router benchmark
-==================
-short static: 1,155,635 ops/sec
-static with same radix: 1,087,020 ops/sec
-dynamic route: 534,661 ops/sec
-mixed static dynamic: 453,982 ops/sec
-long static: 620,895 ops/sec
-wildcard: 373,879 ops/sec
-all together: 94,976 ops/sec
+=======================
+ trek-router benchmark
+=======================
+short static: 8,530,466 ops/sec
+static with same radix: 4,861,846 ops/sec
+dynamic route: 2,240,906 ops/sec
+mixed static dynamic: 2,539,650 ops/sec
+long static: 5,525,210 ops/sec
+wildcard: 3,533,566 ops/sec
+all together: 612,419 ops/sec
 ```
 
 ### Run the benchmarks
@@ -141,6 +163,10 @@ wildcard: { method: 'GET', url: '/static/index.html' }
 all together: all the above at the same time
 ```
 Every test is executed 1 million times, the time is taken with `process.hrtime()`, the final result is expressed in operations per second.
+
+<a name="todo"></a>
+### TODO:
+- [ ] Add a list of the supported features by every router
 
 <a name="license"></a>
 ## License
