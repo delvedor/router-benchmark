@@ -134,6 +134,22 @@ npm i
 npm start
 ```
 
+<a name="features"></a>
+## Router features
+| Router | Framework independent    | Decode URI    | Querystring handling   |  Regex route support | Multi-parametric route support |  Max parameter length |
+| :------------ | :------------ | :------------ | :--------------------- | :------------------- |:------------------------------ |:--------------------- |
+| `find-my-way` | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| `call` | &#10003;  | &#10003; | &#10007; | ? | ? | ? |
+| `express` | &#10007;  | &#10003; | &#10003; | &#10003; | &#10003; | &#10007; |
+| `koa-router` | &#10007;  | &#10007; | &#10007; | &#10003; | &#10003; | &#10007; |
+| `koa-tree-router` | &#10007; | &#10007; | &#10007; | &#10007; | &#10007; | &#10007;  |
+| `router` | &#10003;  | &#10003; | &#10003; | &#10003; | &#10003; | &#10007; |
+| `routr` | &#10003; | &#10003; | &#10003; | &#10007; | &#10007; | &#10007; |
+| `server-router` | &#10003; | &#10003; | &#10007; | &#10007;| &#10007; | &#10007; |
+| `trek-router` | &#10007; | &#10007; | &#10007; | &#10007; | &#10007; | &#10007; |
+
+*Did you find incorrect data in the above table? Please send a pr!*
+
 <a name="how"></a>
 ## How the benchmark is taken
 
