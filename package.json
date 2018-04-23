@@ -12,9 +12,10 @@
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "MIT",
   "dependencies": {
+    "anumargak": "^1.3.0",
     "call": "^5.0.1",
     "express": "^4.16.3",
-    "find-my-way": "^1.11.0",
+    "find-my-way": "^1.12.0",
     "koa-router": "^7.4.0",
     "koa-tree-router": "^0.2.2",
     "router": "^1.3.2",

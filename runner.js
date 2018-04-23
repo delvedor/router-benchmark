@@ -6,6 +6,7 @@ const { Queue } = require('./utils')
 
 const benchmarks = [
   'find-my-way.js',
+  'anumargak.js',
   'call.js',
   'express.js',
   'koa-router.js',

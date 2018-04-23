@@ -7,6 +7,7 @@ Benchmark of the most commonly used http routers.
 Tested routers:
 
 - [find-my-way](https://github.com/delvedor/find-my-way)
+- [anumargak](https://github.com/NaturalIntelligence/anumargak)
 - [call](https://github.com/hapijs/call)
 - [express](https://www.npmjs.com/package/express)
 - [koa-router](https://github.com/alexmingoia/koa-router)
@@ -139,6 +140,7 @@ npm start
 | Router | Framework independent    | Decode URI    | Querystring handling   |  Regex route support | Multi-parametric route support |  Max parameter length |
 | :------------ | :------------ | :------------ | :--------------------- | :------------------- |:------------------------------ |:--------------------- |
 | `find-my-way` | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| `anumargak` | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10007; |
 | `call` | &#10003;  | &#10003; | &#10007; | ? | ? | ? |
 | `express` | &#10007;  | &#10003; | &#10003; | &#10003; | &#10003; | &#10007; |
 | `koa-router` | &#10007;  | &#10007; | &#10007; | &#10003; | &#10003; | &#10007; |
