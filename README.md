@@ -27,101 +27,112 @@ Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pul
 =======================
  find-my-way benchmark
 =======================
-short static: 10,102,066 ops/sec
-static with same radix: 3,887,679 ops/sec
-dynamic route: 1,637,929 ops/sec
-mixed static dynamic: 2,289,554 ops/sec
-long static: 5,403,719 ops/sec
-wildcard: 3,037,119 ops/sec
-all together: 525,798 ops/sec
+short static: 7,745,613 ops/sec
+static with same radix: 3,118,823 ops/sec
+dynamic route: 1,195,282 ops/sec
+mixed static dynamic: 1,726,773 ops/sec
+long static: 4,743,616 ops/sec
+wildcard: 2,446,812 ops/sec
+all together: 415,998 ops/sec
 
 ================
  call benchmark
 ================
-short static: 3,123,503 ops/sec
-static with same radix: 3,094,106 ops/sec
-dynamic route: 578,251 ops/sec
-mixed static dynamic: 632,624 ops/sec
-long static: 3,491,147 ops/sec
-wildcard: 884,869 ops/sec
-all together: 181,587 ops/sec
+short static: 3,244,884 ops/sec
+static with same radix: 3,389,339 ops/sec
+dynamic route: 617,024 ops/sec
+mixed static dynamic: 636,191 ops/sec
+long static: 3,776,016 ops/sec
+wildcard: 899,892 ops/sec
+all together: 188,688 ops/sec
 
 ================================================
  express benchmark (WARNING: includes handling)
 ================================================
-short static: 1,145,409 ops/sec
-static with same radix: 1,102,656 ops/sec
-dynamic route: 595,169 ops/sec
-mixed static dynamic: 513,327 ops/sec
-long static: 642,545 ops/sec
-wildcard: 407,398 ops/sec
-all together: 100,184 ops/sec
+short static: 1,037,162 ops/sec
+static with same radix: 925,226 ops/sec
+dynamic route: 522,694 ops/sec
+mixed static dynamic: 470,980 ops/sec
+long static: 581,354 ops/sec
+wildcard: 427,984 ops/sec
+all together: 98,499 ops/sec
 
 ======================
  koa-router benchmark
 ======================
-short static: 1,004,122 ops/sec
-static with same radix: 1,029,369 ops/sec
-dynamic route: 1,015,635 ops/sec
-mixed static dynamic: 968,784 ops/sec
-long static: 1,027,857 ops/sec
-wildcard: 1,033,432 ops/sec
-all together: 161,220 ops/sec
+short static: 916,500 ops/sec
+static with same radix: 922,262 ops/sec
+dynamic route: 888,385 ops/sec
+mixed static dynamic: 851,606 ops/sec
+long static: 907,456 ops/sec
+wildcard: 877,657 ops/sec
+all together: 146,153 ops/sec
 
 ===========================
  koa-tree-router benchmark
 ===========================
-short static: 11,756,182 ops/sec
-static with same radix: 6,212,981 ops/sec
-dynamic route: 3,221,744 ops/sec
-mixed static dynamic: 4,160,595 ops/sec
-long static: 7,723,753 ops/sec
-wildcard: 4,469,051 ops/sec
-all together: 924,587 ops/sec
+short static: 11,292,851 ops/sec
+static with same radix: 5,488,497 ops/sec
+dynamic route: 2,887,410 ops/sec
+mixed static dynamic: 3,470,038 ops/sec
+long static: 6,981,450 ops/sec
+wildcard: 3,848,972 ops/sec
+all together: 795,986 ops/sec
 
 ===============================================
  router benchmark (WARNING: includes handling)
 ===============================================
-short static: 1,176,121 ops/sec
-static with same radix: 1,110,484 ops/sec
-dynamic route: 628,130 ops/sec
-mixed static dynamic: 536,107 ops/sec
-long static: 678,598 ops/sec
-wildcard: 356,475 ops/sec
-all together: 99,443 ops/sec
+short static: 1,195,738 ops/sec
+static with same radix: 1,112,308 ops/sec
+dynamic route: 576,043 ops/sec
+mixed static dynamic: 499,983 ops/sec
+long static: 617,547 ops/sec
+wildcard: 420,640 ops/sec
+all together: 101,351 ops/sec
 
 =================
  routr benchmark
 =================
-short static: 4,562,784 ops/sec
-static with same radix: 2,530,725 ops/sec
-dynamic route: 850,739 ops/sec
-mixed static dynamic: 553,497 ops/sec
-long static: 520,461 ops/sec
-wildcard: 348,495 ops/sec
-all together: 108,098 ops/sec
+short static: 3,270,962 ops/sec
+static with same radix: 1,766,199 ops/sec
+dynamic route: 669,313 ops/sec
+mixed static dynamic: 411,909 ops/sec
+long static: 358,719 ops/sec
+wildcard: 269,882 ops/sec
+all together: 84,583 ops/sec
 
 =========================
  server-router benchmark
 =========================
-short static: 2,500,623 ops/sec
-static with same radix: 2,404,634 ops/sec
-dynamic route: 1,102,154 ops/sec
-mixed static dynamic: 1,094,229 ops/sec
-long static: 1,555,080 ops/sec
-wildcard: 924,381 ops/sec
-all together: 215,779 ops/sec
+short static: 2,708,700 ops/sec
+static with same radix: 2,785,060 ops/sec
+dynamic route: 1,217,104 ops/sec
+mixed static dynamic: 1,130,491 ops/sec
+long static: 1,755,331 ops/sec
+wildcard: 970,524 ops/sec
+all together: 223,977 ops/sec
 
 =======================
  trek-router benchmark
 =======================
-short static: 8,530,466 ops/sec
-static with same radix: 4,861,846 ops/sec
-dynamic route: 2,240,906 ops/sec
-mixed static dynamic: 2,539,650 ops/sec
-long static: 5,525,210 ops/sec
-wildcard: 3,533,566 ops/sec
-all together: 612,419 ops/sec
+short static: 8,075,302 ops/sec
+static with same radix: 4,175,896 ops/sec
+dynamic route: 1,584,014 ops/sec
+mixed static dynamic: 1,965,050 ops/sec
+long static: 6,213,978 ops/sec
+wildcard: 3,019,820 ops/sec
+all together: 487,037 ops/sec
+
+===================
+ trouter benchmark
+===================
+short static: 2,567,976 ops/sec
+static with same radix: 1,770,110 ops/sec
+dynamic route: 1,290,340 ops/sec
+mixed static dynamic: 1,439,608 ops/sec
+long static: 1,046,488 ops/sec
+wildcard: 1,597,536 ops/sec
+all together: 241,768 ops/sec
 ```
 
 ### Run the benchmarks

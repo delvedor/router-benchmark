@@ -20,7 +20,8 @@
     "router": "^1.3.2",
     "routr": "^2.1.0",
     "server-router": "^6.0.0",
-    "trek-router": "^1.2.0"
+    "trek-router": "^1.2.0",
+    "trouter": "^2.0.1"
   },
   "devDependencies": {
     "chalk": "^2.3.2",
