@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3913a9c-bd1d-4761-ae4c-102a0c8e467c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/benchmarks/call.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/express.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/find-my-way.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/koa-router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/koa-tree-router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/routr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/server-router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/trek-router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner.js" beforeDir="false" afterPath="$PROJECT_DIR$/runner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

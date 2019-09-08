@@ -24,104 +24,95 @@ Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pul
 *These benchmarks where taken under node v8.9.0, on a MacBook Pro Retina Late 2013 (i7, 16GB of RAM).*
 
 ```
-=======================
- find-my-way benchmark
-=======================
-short static: 10,102,066 ops/sec
-static with same radix: 3,887,679 ops/sec
-dynamic route: 1,637,929 ops/sec
-mixed static dynamic: 2,289,554 ops/sec
-long static: 5,403,719 ops/sec
-wildcard: 3,037,119 ops/sec
-all together: 525,798 ops/sec
+Benchmarking: short static
+	trek-router x 29,084,721 ops/sec ±1.16% (89 runs sampled)
+	call x 8,101,926 ops/sec ±1.78% (90 runs sampled)
+	express x 2,057,472 ops/sec ±0.50% (92 runs sampled)
+	find-my-way x 18,684,934 ops/sec ±0.68% (94 runs sampled)
+	koa-router x 1,397,558 ops/sec ±0.97% (94 runs sampled)
+	koa-tree-router x 25,772,662 ops/sec ±1.73% (85 runs sampled)
+	road-runner x 41,907,464 ops/sec ±0.81% (92 runs sampled)
+	router x 2,075,999 ops/sec ±0.96% (91 runs sampled)
+	routr x 7,489,195 ops/sec ±0.67% (92 runs sampled)
+	server-router x 1,784,795 ops/sec ±1.04% (93 runs sampled)
+	trek-router x 15,362,734 ops/sec ±0.60% (93 runs sampled)
+	trek-router x 3,908,636 ops/sec ±0.56% (92 runs sampled)
+WINNER: road-runner
 
-================
- call benchmark
-================
-short static: 3,123,503 ops/sec
-static with same radix: 3,094,106 ops/sec
-dynamic route: 578,251 ops/sec
-mixed static dynamic: 632,624 ops/sec
-long static: 3,491,147 ops/sec
-wildcard: 884,869 ops/sec
-all together: 181,587 ops/sec
+Benchmarking: static with same radix
+	trek-router x 10,312,965 ops/sec ±0.40% (95 runs sampled)
+	call x 7,635,973 ops/sec ±0.47% (94 runs sampled)
+	express x 1,790,534 ops/sec ±0.42% (96 runs sampled)
+	find-my-way x 5,918,374 ops/sec ±1.03% (92 runs sampled)
+	koa-router x 1,400,501 ops/sec ±0.49% (93 runs sampled)
+	koa-tree-router x 11,465,859 ops/sec ±0.39% (96 runs sampled)
+	road-runner x 43,780,556 ops/sec ±0.52% (90 runs sampled)
+	router x 1,839,910 ops/sec ±0.52% (93 runs sampled)
+	routr x 3,318,231 ops/sec ±1.07% (91 runs sampled)
+	server-router x 1,379,142 ops/sec ±0.53% (92 runs sampled)
+	trek-router x 7,940,053 ops/sec ±0.55% (91 runs sampled)
+	trek-router x 3,788,768 ops/sec ±0.73% (92 runs sampled)
+WINNER: road-runner
 
-================================================
- express benchmark (WARNING: includes handling)
-================================================
-short static: 1,145,409 ops/sec
-static with same radix: 1,102,656 ops/sec
-dynamic route: 595,169 ops/sec
-mixed static dynamic: 513,327 ops/sec
-long static: 642,545 ops/sec
-wildcard: 407,398 ops/sec
-all together: 100,184 ops/sec
+Benchmarking: dynamic route
+	trek-router x 4,173,267 ops/sec ±0.53% (92 runs sampled)
+	call x 60,565 ops/sec ±0.63% (81 runs sampled)
+	express x 892,780 ops/sec ±1.13% (92 runs sampled)
+	find-my-way x 2,303,675 ops/sec ±1.43% (89 runs sampled)
+	koa-router x 1,270,939 ops/sec ±1.40% (90 runs sampled)
+	koa-tree-router x 4,688,382 ops/sec ±1.46% (91 runs sampled)
+	road-runner x 3,766,962 ops/sec ±1.23% (90 runs sampled)
+	router x 906,729 ops/sec ±0.99% (95 runs sampled)
+	routr x 1,040,663 ops/sec ±1.01% (93 runs sampled)
+	server-router x 693,511 ops/sec ±0.60% (91 runs sampled)
+	trek-router x 3,488,445 ops/sec ±0.41% (97 runs sampled)
+	trek-router x 2,947,177 ops/sec ±0.99% (94 runs sampled)
+WINNER: koa-tree-router
 
-======================
- koa-router benchmark
-======================
-short static: 1,004,122 ops/sec
-static with same radix: 1,029,369 ops/sec
-dynamic route: 1,015,635 ops/sec
-mixed static dynamic: 968,784 ops/sec
-long static: 1,027,857 ops/sec
-wildcard: 1,033,432 ops/sec
-all together: 161,220 ops/sec
+Benchmarking: mixed static dynamic
+	trek-router x 2,569,386 ops/sec ±0.85% (93 runs sampled)
+	call x 52,842 ops/sec ±1.38% (88 runs sampled)
+	express x 716,605 ops/sec ±0.89% (90 runs sampled)
+	find-my-way x 2,706,745 ops/sec ±1.62% (90 runs sampled)
+	koa-router x 1,248,532 ops/sec ±0.93% (89 runs sampled)
+	koa-tree-router x 5,696,085 ops/sec ±1.43% (89 runs sampled)
+	road-runner x 4,163,593 ops/sec ±1.43% (91 runs sampled)
+	router x 681,619 ops/sec ±1.53% (89 runs sampled)
+	routr x 679,791 ops/sec ±0.92% (91 runs sampled)
+	server-router x 735,124 ops/sec ±0.72% (90 runs sampled)
+	trek-router x 3,393,802 ops/sec ±3.52% (82 runs sampled)
+	trek-router x 2,473,778 ops/sec ±3.05% (84 runs sampled)
+WINNER: koa-tree-router
 
-===========================
- koa-tree-router benchmark
-===========================
-short static: 11,756,182 ops/sec
-static with same radix: 6,212,981 ops/sec
-dynamic route: 3,221,744 ops/sec
-mixed static dynamic: 4,160,595 ops/sec
-long static: 7,723,753 ops/sec
-wildcard: 4,469,051 ops/sec
-all together: 924,587 ops/sec
+Benchmarking: long static
+	trek-router x 5,729,271 ops/sec ±1.22% (90 runs sampled)
+	call x 6,169,357 ops/sec ±1.32% (88 runs sampled)
+	express x 948,074 ops/sec ±0.73% (95 runs sampled)
+	find-my-way x 6,899,085 ops/sec ±0.94% (91 runs sampled)
+	koa-router x 1,312,166 ops/sec ±0.86% (91 runs sampled)
+	koa-tree-router x 12,145,194 ops/sec ±1.06% (90 runs sampled)
+	road-runner x 46,533,260 ops/sec ±1.56% (91 runs sampled)
+	router x 937,217 ops/sec ±1.23% (90 runs sampled)
+	routr x 714,357 ops/sec ±1.13% (92 runs sampled)
+	server-router x 747,147 ops/sec ±1.37% (92 runs sampled)
+	trek-router x 9,089,000 ops/sec ±0.89% (92 runs sampled)
+	trek-router x 3,485,596 ops/sec ±1.48% (89 runs sampled)
+WINNER: road-runner
 
-===============================================
- router benchmark (WARNING: includes handling)
-===============================================
-short static: 1,176,121 ops/sec
-static with same radix: 1,110,484 ops/sec
-dynamic route: 628,130 ops/sec
-mixed static dynamic: 536,107 ops/sec
-long static: 678,598 ops/sec
-wildcard: 356,475 ops/sec
-all together: 99,443 ops/sec
-
-=================
- routr benchmark
-=================
-short static: 4,562,784 ops/sec
-static with same radix: 2,530,725 ops/sec
-dynamic route: 850,739 ops/sec
-mixed static dynamic: 553,497 ops/sec
-long static: 520,461 ops/sec
-wildcard: 348,495 ops/sec
-all together: 108,098 ops/sec
-
-=========================
- server-router benchmark
-=========================
-short static: 2,500,623 ops/sec
-static with same radix: 2,404,634 ops/sec
-dynamic route: 1,102,154 ops/sec
-mixed static dynamic: 1,094,229 ops/sec
-long static: 1,555,080 ops/sec
-wildcard: 924,381 ops/sec
-all together: 215,779 ops/sec
-
-=======================
- trek-router benchmark
-=======================
-short static: 8,530,466 ops/sec
-static with same radix: 4,861,846 ops/sec
-dynamic route: 2,240,906 ops/sec
-mixed static dynamic: 2,539,650 ops/sec
-long static: 5,525,210 ops/sec
-wildcard: 3,533,566 ops/sec
-all together: 612,419 ops/sec
+Benchmarking: wildcard
+	trek-router x 2,477,202 ops/sec ±0.48% (97 runs sampled)
+	call x 51,703 ops/sec ±0.65% (90 runs sampled)
+	express x 555,571 ops/sec ±1.20% (94 runs sampled)
+	find-my-way x 3,991,118 ops/sec ±0.75% (92 runs sampled)
+	koa-router x 1,316,350 ops/sec ±1.15% (93 runs sampled)
+	koa-tree-router x 6,852,081 ops/sec ±0.49% (96 runs sampled)
+	road-runner x 5,701,261 ops/sec ±0.49% (91 runs sampled)
+	router x 575,414 ops/sec ±1.32% (94 runs sampled)
+	routr x 459,416 ops/sec ±1.15% (90 runs sampled)
+	server-router x 768,627 ops/sec ±1.27% (93 runs sampled)
+	trek-router x 5,519,168 ops/sec ±1.29% (92 runs sampled)
+	trek-router x 2,960,875 ops/sec ±1.09% (88 runs sampled)
+WINNER: koa-tree-router
 ```
 
 ### Run the benchmarks
