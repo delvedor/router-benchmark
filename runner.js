@@ -1,28 +1,45 @@
 'use strict'
 
-const { fork } = require('child_process')
-const { resolve } = require('path')
-const { Queue } = require('./utils')
+const fs = require('fs')
+const routes = require('./routes.json')
+const Benchmark = require('benchmark')
+const chalk = require('chalk')
 
-const benchmarks = [
-  'find-my-way.js',
-  'call.js',
-  'express.js',
-  'koa-router.js',
-  'koa-tree-router.js',
-  'router.js',
-  'routr.js',
-  'server-router.js',
-  'trek-router.js'
-]
+const suites = {}
+function noop () {}
 
-const queue = new Queue()
+fs.readdirSync('./libraries').forEach((f) => {
+  const library = require(`./libraries/${f}`)
 
-benchmarks.forEach(file => {
-  queue.add(runner.bind({ file: resolve('benchmarks', file) }))
+  if (library.name) {
+    library.registerRoutes(routes, noop)
+
+    for (const route of routes.filter(r => !!r.suite)) {
+      if (!suites[route.suite]) {
+        suites[route.suite] = new Benchmark.Suite()
+      }
+
+      suites[route.suite].add(library.name, function () {
+        library.get(route.test || route.path, noop)
+      })
+    }
+  }
 })
 
-function runner (done) {
-  const process = fork(this.file)
-  process.on('close', done)
+const indent = 10
+
+for (const suiteName in suites) {
+  suites[suiteName]
+    .on('start', function () {
+      console.log(`\nBenchmarking: ${suiteName}`)
+    })
+    .on('cycle', function (event) {
+      console.log(`\t${chalk.gray.italic(String(event.target))}`)
+    })
+    .on('complete', function () {
+      const name = this.filter('fastest').map('name')
+
+      console.log(chalk.bold.green(`WINNER: ${name}`.padStart(indent)))
+    })
+    .run()
 }

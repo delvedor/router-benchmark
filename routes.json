@@ -1,0 +1,63 @@
+[
+  {
+    "method": "GET",
+    "path": "/user",
+    "suite": "short static"
+  },
+  {
+    "method": "GET",
+    "path": "/user/comments",
+    "suite": "static with same radix"
+  },
+  {
+    "method": "GET",
+    "path": "/user/avatar"
+  },
+  {
+    "method": "GET",
+    "path": "/user/lookup/username/:username",
+    "test": "/user/lookup/username/john",
+    "suite": "dynamic route"
+  },
+  {
+    "method": "GET",
+    "path": "/user/lookup/email/:address",
+    "test": "/user/lookup/email/foo@bar.com"
+  },
+  {
+    "method": "GET",
+    "path": "/event/:id",
+    "test": "/event/abcd1234"
+  },
+  {
+    "method": "GET",
+    "path": "/event/:id/comments",
+    "test": "/event/abcd1234/comments",
+    "suite": "mixed static dynamic"
+  },
+  {
+    "method": "POST",
+    "path": "/event/:id/comment",
+    "test": "/event/abcd1234/comment"
+  },
+  {
+    "method": "GET",
+    "path": "/map/:location/events",
+    "test": "/map/US/events"
+  },
+  {
+    "method": "GET",
+    "path": "/status"
+  },
+  {
+    "method": "GET",
+    "path": "/very/deeply/nested/route/hello/there",
+    "suite": "long static"
+  },
+  {
+    "method": "GET",
+    "path": "/static/*",
+    "test": "/static/energy",
+    "suite": "wildcard"
+  }
+]
