@@ -21,7 +21,7 @@ for (const route of routes) {
       // produce random path names to introduce performance degradation on misses
       const rewrite = {
         ...route,
-        path: route.path.replace(/{([A-z]+)}/, `$1${Math.floor(Math.random() * 10000)}`),
+        path: route.path.replace(/{([A-z]+)}/, `$1${Math.floor(Math.random() * 10000000)}`),
         suite: `${route.suite} (404)`
       }
 
@@ -64,7 +64,7 @@ const indent = 10
 for (const suiteName in suites) {
   suites[suiteName]
     .on('start', function () {
-      console.log(`\nBenchmarking: ${chalk.bold(suiteName)}`)
+      console.log(`\nBenchmarking: ${chalk.bold.blue(suiteName)}`)
     })
     .on('cycle', function (event) {
       console.log(`\t${chalk.gray.italic(String(event.target))}`)
