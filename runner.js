@@ -64,7 +64,7 @@ const indent = 10
 for (const suiteName in suites) {
   suites[suiteName]
     .on('start', function () {
-      console.log(`\nBenchmarking: ${chalk.bold.blue(suiteName)}`)
+      console.log(`\nBenchmarking: ${chalk.bold.yellow(suiteName)}`)
     })
     .on('cycle', function (event) {
       console.log(`\t${chalk.gray.italic(String(event.target))}`)
