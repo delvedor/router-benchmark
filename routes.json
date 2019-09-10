@@ -6,7 +6,7 @@
   },
   {
     "method": "GET",
-    "path": "/user/{user}",
+    "path": "/user/{profile}",
     "suite": "static with same radix"
   },
   {

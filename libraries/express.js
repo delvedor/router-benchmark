@@ -13,10 +13,10 @@ module.exports = {
       }
     })
   },
-  get (path) {
+  get (path, noop) {
     router.handle({
       method: 'GET',
       url: path
-    })
+    }, null, noop)
   }
 }
