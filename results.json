@@ -1,0 +1,774 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+            {
+                "test": "short static",
+                "library": "anumargak",
+                "ops": 24122598.657896485
+            },
+            {
+                "test": "short static",
+                "library": "call",
+                "ops": 7980702.068528898
+            },
+            {
+                "test": "short static",
+                "library": "express",
+                "ops": 1820345.8524272088
+            },
+            {
+                "test": "short static",
+                "library": "find-my-way",
+                "ops": 16801767.89696537
+            },
+            {
+                "test": "short static",
+                "library": "koa-router",
+                "ops": 338984.25750977214
+            },
+            {
+                "test": "short static",
+                "library": "koa-tree-router",
+                "ops": 25622505.94146839
+            },
+            {
+                "test": "short static",
+                "library": "road-runner",
+                "ops": 29403231.22312767
+            },
+            {
+                "test": "short static",
+                "library": "router",
+                "ops": 2044160.2244983101
+            },
+            {
+                "test": "short static",
+                "library": "routr",
+                "ops": 6551702.151073145
+            },
+            {
+                "test": "short static",
+                "library": "server-router",
+                "ops": 1730931.1282222678
+            },
+            {
+                "test": "short static",
+                "library": "trek-router",
+                "ops": 15393776.412360419
+            },
+            {
+                "test": "short static",
+                "library": "trouter",
+                "ops": 356851.2498243828
+            },
+            {
+                "test": "static with same radix",
+                "library": "anumargak",
+                "ops": 11127672.032144029
+            },
+            {
+                "test": "static with same radix",
+                "library": "call",
+                "ops": 8020366.618648823
+            },
+            {
+                "test": "static with same radix",
+                "library": "express",
+                "ops": 1707452.0450585424
+            },
+            {
+                "test": "static with same radix",
+                "library": "find-my-way",
+                "ops": 6137263.345852001
+            },
+            {
+                "test": "static with same radix",
+                "library": "koa-router",
+                "ops": 336291.30929763784
+            },
+            {
+                "test": "static with same radix",
+                "library": "koa-tree-router",
+                "ops": 11384215.12917249
+            },
+            {
+                "test": "static with same radix",
+                "library": "road-runner",
+                "ops": 11756654.18029984
+            },
+            {
+                "test": "static with same radix",
+                "library": "router",
+                "ops": 1766142.7427055652
+            },
+            {
+                "test": "static with same radix",
+                "library": "routr",
+                "ops": 3573231.4987273533
+            },
+            {
+                "test": "static with same radix",
+                "library": "server-router",
+                "ops": 1331600.7806723411
+            },
+            {
+                "test": "static with same radix",
+                "library": "trek-router",
+                "ops": 7780026.445723188
+            },
+            {
+                "test": "static with same radix",
+                "library": "trouter",
+                "ops": 375937.013856077
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "anumargak",
+                "ops": 8626844.837092629
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "call",
+                "ops": 7955671.075015612
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "express",
+                "ops": 1524012.9869518029
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "find-my-way",
+                "ops": 3427025.6213472188
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "koa-router",
+                "ops": 321817.68590199057
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "koa-tree-router",
+                "ops": 7826177.567730272
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "road-runner",
+                "ops": 8518180.800945431
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "router",
+                "ops": 1551231.5488155284
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "routr",
+                "ops": 2452682.593210985
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "server-router",
+                "ops": 1313888.2410694172
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "trek-router",
+                "ops": 5042142.094575767
+            },
+            {
+                "test": "static with same radix (404)",
+                "library": "trouter",
+                "ops": 372387.6015684625
+            },
+            {
+                "test": "dynamic route",
+                "library": "anumargak",
+                "ops": 210378.16960004676
+            },
+            {
+                "test": "dynamic route",
+                "library": "call",
+                "ops": 57076.74345321575
+            },
+            {
+                "test": "dynamic route",
+                "library": "express",
+                "ops": 152383.38848905903
+            },
+            {
+                "test": "dynamic route",
+                "library": "find-my-way",
+                "ops": 3711462.9493548456
+            },
+            {
+                "test": "dynamic route",
+                "library": "koa-router",
+                "ops": 331569.2676598432
+            },
+            {
+                "test": "dynamic route",
+                "library": "koa-tree-router",
+                "ops": 8138770.9808313055
+            },
+            {
+                "test": "dynamic route",
+                "library": "road-runner",
+                "ops": 7941621.039155335
+            },
+            {
+                "test": "dynamic route",
+                "library": "router",
+                "ops": 144846.56391821816
+            },
+            {
+                "test": "dynamic route",
+                "library": "routr",
+                "ops": 65869.51819384882
+            },
+            {
+                "test": "dynamic route",
+                "library": "server-router",
+                "ops": 0
+            },
+            {
+                "test": "dynamic route",
+                "library": "trek-router",
+                "ops": 3814157.5948442593
+            },
+            {
+                "test": "dynamic route",
+                "library": "trouter",
+                "ops": 334546.97975105216
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "anumargak",
+                "ops": 201315.5979283226
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "call",
+                "ops": 60251.06905452645
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "express",
+                "ops": 143641.58455470696
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "find-my-way",
+                "ops": 3371598.055341025
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "koa-router",
+                "ops": 314689.60150824726
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "koa-tree-router",
+                "ops": 7159310.360938707
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "road-runner",
+                "ops": 7213467.204187271
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "router",
+                "ops": 147448.76376099736
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "routr",
+                "ops": 68869.46061856611
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "server-router",
+                "ops": 0
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "trek-router",
+                "ops": 4408809.447868105
+            },
+            {
+                "test": "dynamic route (404)",
+                "library": "trouter",
+                "ops": 365335.95052143745
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "anumargak",
+                "ops": 304581.1976603748
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "call",
+                "ops": 55812.04044267975
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "express",
+                "ops": 252266.6018420228
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "find-my-way",
+                "ops": 2471719.4944397234
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "koa-router",
+                "ops": 311435.4893068661
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "koa-tree-router",
+                "ops": 5006680.42201259
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "road-runner",
+                "ops": 5746181.370483538
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "router",
+                "ops": 244100.03008877582
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "routr",
+                "ops": 125037.20681945555
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "server-router",
+                "ops": 676898.5467780592
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "trek-router",
+                "ops": 3500008.2746761097
+            },
+            {
+                "test": "mixed static dynamic",
+                "library": "trouter",
+                "ops": 348603.05405797454
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "anumargak",
+                "ops": 302055.194756255
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "call",
+                "ops": 50096.07359271864
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "express",
+                "ops": 232625.89175896923
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "find-my-way",
+                "ops": 2299033.3841020954
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "koa-router",
+                "ops": 291584.1346600507
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "koa-tree-router",
+                "ops": 4353936.014919
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "road-runner",
+                "ops": 5235544.9904093575
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "router",
+                "ops": 247221.61450574765
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "routr",
+                "ops": 131052.63016741781
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "server-router",
+                "ops": 679235.7395233469
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "trek-router",
+                "ops": 3378127.300443931
+            },
+            {
+                "test": "mixed static dynamic (404)",
+                "library": "trouter",
+                "ops": 333877.3384463938
+            },
+            {
+                "test": "long static",
+                "library": "anumargak",
+                "ops": 2351946.9436281254
+            },
+            {
+                "test": "long static",
+                "library": "call",
+                "ops": 362296.43608905084
+            },
+            {
+                "test": "long static",
+                "library": "express",
+                "ops": 166829.608784742
+            },
+            {
+                "test": "long static",
+                "library": "find-my-way",
+                "ops": 2599184.219142834
+            },
+            {
+                "test": "long static",
+                "library": "koa-router",
+                "ops": 296654.416379314
+            },
+            {
+                "test": "long static",
+                "library": "koa-tree-router",
+                "ops": 6675652.922418003
+            },
+            {
+                "test": "long static",
+                "library": "road-runner",
+                "ops": 6986365.188438491
+            },
+            {
+                "test": "long static",
+                "library": "router",
+                "ops": 176622.11701622326
+            },
+            {
+                "test": "long static",
+                "library": "routr",
+                "ops": 80677.65481235656
+            },
+            {
+                "test": "long static",
+                "library": "server-router",
+                "ops": 672257.2602907101
+            },
+            {
+                "test": "long static",
+                "library": "trek-router",
+                "ops": 3892845.321326316
+            },
+            {
+                "test": "long static",
+                "library": "trouter",
+                "ops": 310268.06152820704
+            },
+            {
+                "test": "long static (404)",
+                "library": "anumargak",
+                "ops": 1874477.8248133082
+            },
+            {
+                "test": "long static (404)",
+                "library": "call",
+                "ops": 383074.2709685385
+            },
+            {
+                "test": "long static (404)",
+                "library": "express",
+                "ops": 158629.44643839
+            },
+            {
+                "test": "long static (404)",
+                "library": "find-my-way",
+                "ops": 2287868.538494229
+            },
+            {
+                "test": "long static (404)",
+                "library": "koa-router",
+                "ops": 273816.6281357372
+            },
+            {
+                "test": "long static (404)",
+                "library": "koa-tree-router",
+                "ops": 5239418.182394793
+            },
+            {
+                "test": "long static (404)",
+                "library": "road-runner",
+                "ops": 5039282.902839317
+            },
+            {
+                "test": "long static (404)",
+                "library": "router",
+                "ops": 158555.66651703333
+            },
+            {
+                "test": "long static (404)",
+                "library": "routr",
+                "ops": 76362.12931913599
+            },
+            {
+                "test": "long static (404)",
+                "library": "server-router",
+                "ops": 731232.0517108894
+            },
+            {
+                "test": "long static (404)",
+                "library": "trek-router",
+                "ops": 3301263.39633222
+            },
+            {
+                "test": "long static (404)",
+                "library": "trouter",
+                "ops": 307441.5053395898
+            },
+            {
+                "test": "wildcard",
+                "library": "anumargak",
+                "ops": 181563.99638910155
+            },
+            {
+                "test": "wildcard",
+                "library": "call",
+                "ops": 52460.690153286094
+            },
+            {
+                "test": "wildcard",
+                "library": "express",
+                "ops": 146107.81034597624
+            },
+            {
+                "test": "wildcard",
+                "library": "find-my-way",
+                "ops": 14785526.348631892
+            },
+            {
+                "test": "wildcard",
+                "library": "koa-router",
+                "ops": 323845.30681590515
+            },
+            {
+                "test": "wildcard",
+                "library": "koa-tree-router",
+                "ops": 16970637.022361007
+            },
+            {
+                "test": "wildcard",
+                "library": "road-runner",
+                "ops": 17188454.472059224
+            },
+            {
+                "test": "wildcard",
+                "library": "router",
+                "ops": 136372.0880765766
+            },
+            {
+                "test": "wildcard",
+                "library": "routr",
+                "ops": 65894.91113951286
+            },
+            {
+                "test": "wildcard",
+                "library": "server-router",
+                "ops": 0
+            },
+            {
+                "test": "wildcard",
+                "library": "trek-router",
+                "ops": 9775330.723221507
+            },
+            {
+                "test": "wildcard",
+                "library": "trouter",
+                "ops": 346317.2571579759
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "anumargak",
+                "ops": 193795.9123173186
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "call",
+                "ops": 53677.0815630269
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "express",
+                "ops": 143953.0404935185
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "find-my-way",
+                "ops": 12757925.98283155
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "koa-router",
+                "ops": 320274.91666859953
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "koa-tree-router",
+                "ops": 15348258.51500226
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "road-runner",
+                "ops": 13599359.297787253
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "router",
+                "ops": 133655.22276691956
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "routr",
+                "ops": 66095.93470197465
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "server-router",
+                "ops": 0
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "trek-router",
+                "ops": 9886031.968858998
+            },
+            {
+                "test": "wildcard (404)",
+                "library": "trouter",
+                "ops": 354080.3567411114
+            }
+        ]
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "ops",
+                "gt": 0
+            }
+        },
+        {
+            "calculate": "indexof(datum.test, '404') == -1 ? 'Standard' : '404'",
+            "as": "type"
+        }
+    ],
+    "config": {
+        "background": "white",
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "domainWidth": 1
+        }
+    },
+    "vconcat": [
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "field": "type",
+                        "equal": "Standard"
+                    }
+                }
+            ],
+            "width": {
+                "step": 12
+            },
+            "mark": "bar",
+            "encoding": {
+                "column": {
+                    "field": "test",
+                    "title": "Standard Tests",
+                    "type": "ordinal",
+                    "spacing": 10
+                },
+                "y": {
+                    "aggregate": "sum",
+                    "field": "ops",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "ops/sec",
+                        "grid": false
+                    }
+                },
+                "x": {
+                    "field": "library",
+                    "type": "nominal",
+                    "axis": {
+                        "title": ""
+                    }
+                },
+                "color": {
+                    "field": "library",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "field": "type",
+                        "equal": "404"
+                    }
+                }
+            ],
+            "width": {
+                "step": 12
+            },
+            "mark": "bar",
+            "encoding": {
+                "column": {
+                    "field": "test",
+                    "title": "404 Tests",
+                    "type": "ordinal",
+                    "spacing": 10
+                },
+                "y": {
+                    "aggregate": "sum",
+                    "field": "ops",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "ops/sec",
+                        "grid": false
+                    }
+                },
+                "x": {
+                    "field": "library",
+                    "type": "nominal",
+                    "axis": {
+                        "title": ""
+                    }
+                },
+                "color": {
+                    "field": "library",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}

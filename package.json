@@ -6,12 +6,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node runner.js",
+    "chart": "vl2png results.json > results.png",
     "test": "standard"
   },
   "keywords": [],
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "MIT",
   "dependencies": {
+    "@parisholley/road-runner": "^1.1.4",
+    "anumargak": "^2.2.0",
     "call": "^5.0.1",
     "express": "^4.16.3",
     "find-my-way": "^1.11.0",
@@ -20,10 +23,15 @@
     "router": "^1.3.2",
     "routr": "^2.1.0",
     "server-router": "^6.0.0",
-    "trek-router": "^1.2.0"
+    "trek-router": "^1.2.0",
+    "trouter": "^3.1.0"
   },
   "devDependencies": {
+    "benchmark": "^2.1.4",
     "chalk": "^2.3.2",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "vega": "^5.6.0",
+    "vega-cli": "^5.6.0",
+    "vega-lite": "^4.0.0-beta.2"
   }
 }
