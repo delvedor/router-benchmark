@@ -25,7 +25,7 @@ Do you know other routers? [PR](https://github.com/delvedor/router-benchmark/pul
 <a name="results"></a>
 ## Results
 *These benchmarks where taken under node v11.10.1, on a MacBook Pro 15-inch 2018 (i9, 32GB of RAM).*
-[chart](./results.png)
+![chart](./results.png)
 
 ### Run the benchmarks
 Do you wan to run the benchmarks by yourself?  
