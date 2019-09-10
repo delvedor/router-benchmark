@@ -13,7 +13,7 @@
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "MIT",
   "dependencies": {
-    "@parisholley/road-runner": "^1.1.0",
+    "@parisholley/road-runner": "^1.1.4",
     "anumargak": "^2.2.0",
     "call": "^5.0.1",
     "express": "^4.16.3",

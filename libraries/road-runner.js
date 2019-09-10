@@ -1,6 +1,8 @@
 'use strict'
 
-const router = require('@parisholley/road-runner').roadrunner()
+const RoadRunner = require('@parisholley/road-runner')
+
+const router = new RoadRunner()
 
 module.exports = {
   name: 'road-runner',
