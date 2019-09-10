@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {},
+  "transform": [
+    {
+      "filter": {
+        "field": "ops",
+        "gt": 0
+      }
+    },
+    {
+      "calculate": "indexof(datum.test, '404') == -1 ? 'Standard' : '404'",
+      "as": "type"
+    }
+  ],
+  "config": {
+    "background": "white",
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "domainWidth": 1
+    }
+  },
+  "vconcat": [
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "type",
+            "equal": "Standard"
+          }
+        }
+      ],
+      "width": {
+        "step": 12
+      },
+      "mark": "bar",
+      "encoding": {
+        "column": {
+          "field": "test",
+          "title": "Standard Tests",
+          "type": "ordinal",
+          "spacing": 10
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "ops",
+          "type": "quantitative",
+          "axis": {
+            "title": "ops/sec",
+            "grid": false
+          }
+        },
+        "x": {
+          "field": "library",
+          "type": "nominal",
+          "axis": {
+            "title": ""
+          }
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "type",
+            "equal": "404"
+          }
+        }
+      ],
+      "width": {
+        "step": 12
+      },
+      "mark": "bar",
+      "encoding": {
+        "column": {
+          "field": "test",
+          "title": "404 Tests",
+          "type": "ordinal",
+          "spacing": 10
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "ops",
+          "type": "quantitative",
+          "axis": {
+            "title": "ops/sec",
+            "grid": false
+          }
+        },
+        "x": {
+          "field": "library",
+          "type": "nominal",
+          "axis": {
+            "title": ""
+          }
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

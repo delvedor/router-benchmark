@@ -6,13 +6,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node runner.js",
+    "chart": "vl2png results.json > results.png",
     "test": "standard"
   },
   "keywords": [],
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "MIT",
   "dependencies": {
-    "@parisholley/road-runner": "^1.0.8",
+    "@parisholley/road-runner": "^1.1.0",
     "anumargak": "^2.2.0",
     "call": "^5.0.1",
     "express": "^4.16.3",
@@ -28,6 +29,9 @@
   "devDependencies": {
     "benchmark": "^2.1.4",
     "chalk": "^2.3.2",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "vega": "^5.6.0",
+    "vega-cli": "^5.6.0",
+    "vega-lite": "^4.0.0-beta.2"
   }
 }

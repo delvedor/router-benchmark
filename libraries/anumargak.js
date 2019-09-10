@@ -3,7 +3,7 @@
 const router = require('anumargak')()
 
 module.exports = {
-  name: 'trek-router',
+  name: 'anumargak',
   registerRoutes (routes, noop) {
     routes.forEach(route => {
       router.on(route.method, route.path, noop)

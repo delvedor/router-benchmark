@@ -6,7 +6,9 @@ const Benchmark = require('benchmark')
 const chalk = require('chalk')
 
 const suites = {}
-function noop () {}
+
+function noop () {
+}
 
 const random = []
 
@@ -61,12 +63,20 @@ fs.readdirSync('./libraries').forEach((f) => {
 
 const indent = 10
 
+const graph = []
+
 for (const suiteName in suites) {
   suites[suiteName]
     .on('start', function () {
       console.log(`\nBenchmarking: ${chalk.bold.yellow(suiteName)}`)
     })
     .on('cycle', function (event) {
+      graph.push({
+        test: suiteName,
+        library: event.target.name,
+        ops: event.target.hz
+      })
+
       console.log(`\t${chalk.gray.italic(String(event.target))}`)
     })
     .on('complete', function () {
@@ -76,3 +86,8 @@ for (const suiteName in suites) {
     })
     .run()
 }
+
+const spec = require('./chart.json')
+spec.data = {values: graph}
+
+fs.writeFileSync('results.json', JSON.stringify(spec, null, 4))
