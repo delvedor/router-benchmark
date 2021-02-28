@@ -3,7 +3,7 @@
 const { title, now, print, operations } = require('../utils')
 const router = require('expresso-router')()
 
-title('expresso router benchmark')
+title('expresso benchmark')
 
 const routes = [
   { method: 'GET', url: '/user' },
