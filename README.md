@@ -145,7 +145,7 @@ npm start
 | `koa-tree-router` | - | - | - | - | - | -  |
 | `router` | &#10003;  | &#10003; | &#10003; | &#10003; | &#10003; | - |
 | `routr` | &#10003; | &#10003; | &#10003; | - | - | - |
-| `server-router` | &#10003; | &#10003; | - | -| - | - |
+| `server-router` | &#10003; | &#10003; | - | - | - | - |
 | `trek-router` | - | - | - | - | - | - |
 
 *Did you find incorrect data in the above table? Please send a pr!*
